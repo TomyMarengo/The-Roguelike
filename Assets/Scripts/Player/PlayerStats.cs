@@ -30,9 +30,32 @@ public class PlayerStats : MonoBehaviour
 
     public List<LevelRange> levelRanges;
 
+    //I-Frames
+    [Header("I-Frames")]
+    public float invincibilityDuration;
+    float invincibilityTimer;
+    bool isInvincible;
+
+    void Awake()
+    {
+        currentHealth = characterData.MaxHealth;
+        currentRecovery = characterData.Recovery;
+        currentMoveSpeed = characterData.MoveSpeed;
+        currentMight = characterData.Might;
+        currentProjectileSpeed = characterData.ProjectileSpeed;
+    }
+
     void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
+    }
+    void Update() {
+        if(invincibilityTimer > 0) {
+            invincibilityTimer -= Time.deltaTime;
+        }
+        else if (isInvincible) {
+            isInvincible = false;
+        }
     }
 
     public void IncreaseExperience(int amount)
@@ -43,7 +66,7 @@ public class PlayerStats : MonoBehaviour
 
     void LevelUpChecker()
     {
-        if(experience >= experienceCap) {
+        while(experience >= experienceCap) {
             level++;
             experience -= experienceCap;
 
@@ -58,12 +81,28 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void Awake()
+    public void TakeDamage(float dmg)
     {
-        currentHealth = characterData.MaxHealth;
-        currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MoveSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
+        if(!isInvincible) {
+            currentHealth -= dmg;
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
+
+            if(currentHealth <= 0) {
+                Kill();
+            }
+        }
+        
     }
+
+    public void Kill()
+    {
+        Debug.Log("Player id dead");
+    }
+
+    public void RestoreHealth(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth+amount, characterData.MaxHealth);
+    }
+
 }
