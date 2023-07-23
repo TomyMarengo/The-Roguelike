@@ -7,9 +7,9 @@ public class EnemyStats : MonoBehaviour
     public EnemyScriptableObject enemyData;
 
     //Current stats
-    float currentMoveSpeed;
-    float currentHealth;
-    float currentDamage;
+    public float currentMoveSpeed;
+    public float currentHealth;
+    public float currentDamage;
 
     void Awake() 
     {
