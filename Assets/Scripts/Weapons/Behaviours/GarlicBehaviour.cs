@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class GarlicBehaviour : MeleeWeaponBehaviour
 {
+    List<GameObject> markedEnemies;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        markedEnemies = new List<GameObject>();
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Enemy") && !markedEnemies.Contains(other.gameObject)) {
+            base.OnTriggerEnter2D(other);
+            markedEnemies.Add(other.gameObject);
+        }
+        
     }
 
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2086576200766974318}
   - component: {fileID: 7820673089266461106}
   - component: {fileID: 1538305980141883783}
+  - component: {fileID: 9127183395432717041}
   m_Layer: 0
   m_Name: Garlic Weapon
   m_TagString: Untagged
@@ -97,4 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec374e6090469340868b983fd063aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 2bcf32247460b6245944bdf05aee6247, type: 2}
   destroyAfterSeconds: 2
+--- !u!58 &9127183395432717041
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347911723181098435}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.375
