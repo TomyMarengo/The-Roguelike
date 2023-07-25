@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Terrain Sprite Sheet_0
+  m_Name: dirt
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1535542137, guid: dae05dc6e70f8374783a92d2bfea6135, type: 3}
+  m_Sprite: {fileID: 1652653087, guid: 1dbe205675234cb4aaed1d4e7998fa69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
