@@ -156,17 +156,16 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Bat
-      enemyQuota: 4
+      enemyQuota: 5
       spawnedCount: 0
       enemyPrefab: {fileID: 650750336500768081, guid: 476cf63220314274c8dc55542a35dfeb, type: 3}
-    - enemyName: Red Bat
-      enemyQuota: 2
-      spawnedCount: 0
-      enemyPrefab: {fileID: 650750336500768081, guid: fba0d32e82f1f9246b8b238826114390, type: 3}
     waveQuota: 0
-    spawnInterval: 3
+    spawnInterval: 0.5
     spawnedCount: 0
   currentWave: 0
+  waveInterval: 4
+  maxEnemiesAllowed: 4
+  maxEnemiesReached: 0
 --- !u!4 &78433342
 Transform:
   m_ObjectHideFlags: 0
@@ -1198,16 +1197,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
       propertyPath: propPrefabs.Array.size
-      value: 24
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
-      propertyPath: propPrefabs.Array.data[17]
+      propertyPath: propPrefabs.Array.data[12]
       value: 
       objectReference: {fileID: 3171054599331684695, guid: aba55f53785a72d4ea8f1c01819dfda3, type: 3}
     - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
-      propertyPath: propPrefabs.Array.data[18]
+      propertyPath: propPrefabs.Array.data[13]
       value: 
       objectReference: {fileID: 7149308487465094777, guid: 215a625dd0098eb4d9b7ee1d85970373, type: 3}
+    - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
+      propertyPath: propPrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 4307046146192237594, guid: 6011b9e6fd00bd44c932f4e8a8607fb2, type: 3}
+    - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
+      propertyPath: propPrefabs.Array.data[15]
+      value: 
+      objectReference: {fileID: 7539160970004630151, guid: ea9cdc2d6073bb14381465b18b6293f7, type: 3}
+    - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
+      propertyPath: propPrefabs.Array.data[16]
+      value: 
+      objectReference: {fileID: 8402962513251937403, guid: f5627480141e5a047accc7fe92bfdf2b, type: 3}
+    - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
+      propertyPath: propPrefabs.Array.data[17]
+      value: 
+      objectReference: {fileID: 1662772263254455406, guid: e3a0b5105f1e7ec40b1989c7d682b553, type: 3}
+    - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
+      propertyPath: propPrefabs.Array.data[18]
+      value: 
+      objectReference: {fileID: 2259514888722525224, guid: 97d35572e8783bb48a9ffbecbf94b7b1, type: 3}
     - target: {fileID: 3828775886260078841, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
       propertyPath: propPrefabs.Array.data[19]
       value: 
