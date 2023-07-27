@@ -27,11 +27,15 @@ public class EnemySpawner : MonoBehaviour
     public int currentWave; // Index of the current wave
 
     [Header("Spawner Attributes")]
+    private bool waveStarted = false;
     float spawnTimer; // Timer use to determine when to spawn the next enemy
     public float waveInterval; // The amount of seconds between each wave
     public static int enemiesAlive;
     public int maxEnemiesAllowed; // The maximum number of enemies allowed on the map at once
     public bool maxEnemiesReached = false;
+
+    [Header("Spawn Positions")]
+    public List<Transform> relativeSpawnPoints; // A list to store all the relative span points of enemies
 
     Transform player;
 
@@ -45,8 +49,9 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentWave < waves.Count && waves[currentWave].spawnedCount == 0) {
+        if(!waveStarted && currentWave < waves.Count && waves[currentWave].spawnedCount == 0) {
             StartCoroutine(BeginNextWave());
+            waveStarted = true;
         }
 
         spawnTimer += Time.deltaTime;
@@ -60,9 +65,10 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(waveInterval);
 
-        if(currentWave < waves.Count - 1 ) {
+        if(currentWave < waves.Count - 1) {
             currentWave++;
             CalculateWaveQuota();
+            waveStarted = false;
         }
     }
 
@@ -90,8 +96,7 @@ public class EnemySpawner : MonoBehaviour
                         return;
                     }
 
-                    Vector2 spawnPosition = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
-                    Instantiate(enemyGroup.enemyPrefab, spawnPosition, Quaternion.identity);
+                    Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
                     
                     enemyGroup.spawnedCount++;
                     waves[currentWave].spawnedCount++;
