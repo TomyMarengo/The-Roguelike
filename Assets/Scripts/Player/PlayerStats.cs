@@ -17,6 +17,8 @@ public class PlayerStats : MonoBehaviour
     public float currentMight;
     [HideInInspector]
     public float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentMagnet;
 
     //Experience and level
     [Header("Experience/Level")]
@@ -48,12 +50,14 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
     }
 
     void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
     }
+
     void Update() {
         if(invincibilityTimer > 0) {
             invincibilityTimer -= Time.deltaTime;
@@ -61,6 +65,8 @@ public class PlayerStats : MonoBehaviour
         else if (isInvincible) {
             isInvincible = false;
         }
+        
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -105,9 +111,14 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Player id dead");
     }
 
-    public void RestoreHealth(int amount)
+    public void RestoreHealth(float amount)
     {
         currentHealth = Mathf.Min(currentHealth+amount, characterData.MaxHealth);
+    }
+
+    void Recover()
+    {
+        RestoreHealth(currentRecovery * Time.deltaTime);
     }
 
 }

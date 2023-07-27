@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManaPotion : MonoBehaviour, ICollectible
+public class ManaPotion : Pickup, ICollectible
 {
-    public int healthToRestore;
+    public int manaToRestore;
 
     public void Collect()
     {
         /*PlayerStats player = FindObjectOfType<PlayerStats>();
         player.RestoreHealth(healthToRestore);*/
-        Destroy(gameObject);
     }
 }

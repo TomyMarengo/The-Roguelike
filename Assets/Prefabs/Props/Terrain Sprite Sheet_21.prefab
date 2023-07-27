@@ -141,10 +141,10 @@ MonoBehaviour:
   drops:
   - name: Health Potion
     itemPrefab: {fileID: 1563712224098106718, guid: 5d17ce8e336b4e044a713e18e777e6bd, type: 3}
-    dropRate: 10
+    dropRate: 50
   - name: Mana Potion
     itemPrefab: {fileID: 1563712224098106718, guid: 223799d6a65ae3f468079b1d4cb0600e, type: 3}
-    dropRate: 10
+    dropRate: 50
   - name: Speed Potion
     itemPrefab: {fileID: 1563712224098106718, guid: b7d45c1b47842b44d909f6178d1f1d95, type: 3}
-    dropRate: 10
+    dropRate: 50
