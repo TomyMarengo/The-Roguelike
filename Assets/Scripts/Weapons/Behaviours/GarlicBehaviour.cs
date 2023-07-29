@@ -20,7 +20,7 @@ public class GarlicBehaviour : MeleeWeaponBehaviour
         }
         else if(other.CompareTag("Prop") && !markedEnemies.Contains(other.gameObject)) {
             if(other.gameObject.TryGetComponent(out BreakableProps breakable)) {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
                 markedEnemies.Add(other.gameObject);
             }
         }
