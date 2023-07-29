@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d16b22f0c529e874fa1f11716098a1c0, type: 3}
-  m_Name: Spinach
+  m_Name: Wings Level 2
   m_EditorClassIdentifier: 
-  multiplier: 100
+  multiplier: 75
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: -715176402, guid: 6a64f572f4c17ab489aabcc8077b4ee7, type: 3}
