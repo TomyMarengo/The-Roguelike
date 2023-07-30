@@ -11,7 +11,7 @@ public class Pickup : MonoBehaviour
         }
     }
 
-    protected virtual void Collect()
+    public virtual void Collect()
     {
         
     }

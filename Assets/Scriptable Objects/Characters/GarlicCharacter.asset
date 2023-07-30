@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 1042857456, guid: cad06babc6a75d24e9daee921ad814f6, type: 3}
   charName: Jenna
   startingWeapon: {fileID: 6458140173824934192, guid: d1b182850399b77458b16529c539e0ed, type: 3}
-  maxHealth: 10
+  maxHealth: 1000
   recovery: 1
   moveSpeed: 5
   might: 1

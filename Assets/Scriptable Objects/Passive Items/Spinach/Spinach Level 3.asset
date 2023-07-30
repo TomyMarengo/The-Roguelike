@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d16b22f0c529e874fa1f11716098a1c0, type: 3}
-  m_Name: Wings Level 2
+  m_Name: Spinach Level 3
   m_EditorClassIdentifier: 
-  multiplier: 75
-  level: 2
-  nextLevelPrefab: {fileID: 4942914361669856467, guid: 8cd648e87a17c7a41b100328089a77f9, type: 3}
-  passiveItemName: Wings Level 2
-  description: Increases Movement Speed by 75%
-  type: Wings
-  icon: {fileID: -715176402, guid: 6a64f572f4c17ab489aabcc8077b4ee7, type: 3}
+  multiplier: 200
+  level: 3
+  nextLevelPrefab: {fileID: 0}
+  passiveItemName: Spinach Level 3
+  description: Increases Might by 200%
+  type: Spinach
+  icon: {fileID: -642035786, guid: 6a64f572f4c17ab489aabcc8077b4ee7, type: 3}

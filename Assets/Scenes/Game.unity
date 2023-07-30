@@ -323,7 +323,7 @@ Transform:
   - {fileID: 440137328}
   - {fileID: 1854964410}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &79208051
 GameObject:
@@ -764,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -8.25}
-  m_SizeDelta: {x: 210.0723, y: 16.5}
+  m_AnchoredPosition: {x: 155, y: -10.35749}
+  m_SizeDelta: {x: 210.0723, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120756961
 MonoBehaviour:
@@ -814,15 +814,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 10
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 12
-  m_fontSizeMax: 14
+  m_fontSizeMin: 8
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_fontSizeMin: 16
   m_fontSizeMax: 20
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1865,8 +1865,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -8.25}
-  m_SizeDelta: {x: 210.0723, y: 16.5}
+  m_AnchoredPosition: {x: 155, y: -10.357491}
+  m_SizeDelta: {x: 210.0723, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366925437
 MonoBehaviour:
@@ -1915,15 +1915,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 10
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 12
-  m_fontSizeMax: 14
+  m_fontSizeMin: 8
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2059,7 +2059,6 @@ MonoBehaviour:
   stopwatchDisplay: {fileID: 1197918250}
   isGameOver: 0
   choosingUpgrades: 0
-  playerObject: {fileID: 1149128338}
 --- !u!4 &374137047
 Transform:
   m_ObjectHideFlags: 0
@@ -2073,7 +2072,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &374137048
 MonoBehaviour:
@@ -3493,7 +3492,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646676276
 GameObject:
@@ -3932,7 +3931,7 @@ RectTransform:
   - {fileID: 1197918252}
   - {fileID: 79208052}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4998,6 +4997,8 @@ MonoBehaviour:
     passiveItemData: {fileID: 11400000, guid: 83dd0dd7f8d361a409990b6f0cbdfa47, type: 2}
   - initialPassiveItem: {fileID: 6560150201310188196, guid: 3fc0783293414e24794a730bb0cf1098, type: 3}
     passiveItemData: {fileID: 11400000, guid: 3d1649f07b90a6044a17f4fbd42a0059, type: 2}
+  extraUpgradeOptions:
+  - {fileID: -1693008902858061817, guid: 5d17ce8e336b4e044a713e18e777e6bd, type: 3}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 1149523486}
     upgradeDescriptionDisplay: {fileID: 2011639192}
@@ -5107,7 +5108,7 @@ MonoBehaviour:
   m_fontSizeMin: 16
   m_fontSizeMax: 20
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7242,7 +7243,7 @@ MonoBehaviour:
   m_fontSizeMin: 16
   m_fontSizeMax: 20
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7731,8 +7732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -8.25}
-  m_SizeDelta: {x: 210.0723, y: 16.5}
+  m_AnchoredPosition: {x: 155, y: -10.35749}
+  m_SizeDelta: {x: 210.0723, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677846683
 MonoBehaviour:
@@ -7781,15 +7782,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 10
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 12
-  m_fontSizeMax: 14
+  m_fontSizeMin: 8
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8320,7 +8321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805437503
 GameObject:
@@ -8713,7 +8714,7 @@ MonoBehaviour:
   m_fontSizeMin: 16
   m_fontSizeMax: 20
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9458,8 +9459,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -8.25}
-  m_SizeDelta: {x: 210.0723, y: 16.5}
+  m_AnchoredPosition: {x: 155, y: -10.35749}
+  m_SizeDelta: {x: 210.0723, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011639192
 MonoBehaviour:
@@ -9508,15 +9509,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 10
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 12
-  m_fontSizeMax: 14
+  m_fontSizeMin: 8
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10333,7 +10334,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3828775886260078840, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3828775886260078840, guid: a0588a259c13de343acb64b2fc62da42, type: 3}
       propertyPath: m_LocalPosition.x

@@ -26,6 +26,10 @@ public class PassiveItemScriptableObject : ScriptableObject
     public string Description { get => description; private set => description = value; }
 
     [SerializeField]
+    string type;
+    public string Type { get => type; private set => type = value; }
+
+    [SerializeField]
     Sprite icon; // Not meant to be modified in the game (Only in Editor)
     public Sprite Icon { get => icon; private set => icon = value; }
 

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class HealthPotion : Pickup
 {
-    public float healthToRestore;
+    [SerializeField]
+    private float healthToRestore;
 
-    protected override void Collect() 
+    public override void Collect() 
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.RestoreHealth(healthToRestore);

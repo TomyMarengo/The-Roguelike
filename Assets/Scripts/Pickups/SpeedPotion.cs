@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SpeedPotion : Pickup
 {
-    public int speedUp;
+    [SerializeField]
+    private int speedUp;
 
-    protected override void Collect() 
+    public override void Collect() 
     {
         /*PlayerStats player = FindObjectOfType<PlayerStats>();
         player.RestoreHealth(healthToRestore);*/

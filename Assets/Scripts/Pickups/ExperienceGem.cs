@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ExperienceGem : Pickup
 {
-    public int experienceGranted;
+    [SerializeField]
+    private int experienceGranted;
 
-    protected override void Collect() 
+    public override void Collect() 
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
