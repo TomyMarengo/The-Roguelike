@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -128,6 +129,8 @@ public class PlayerStats : MonoBehaviour
 
     [Header("UI")]
     public Image healthBar;
+    public Image expBar;
+    public TMP_Text levelText;
 
     //I-Frames
     [Header("I-Frames")]
@@ -166,6 +169,8 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.AssignChosenCharacterUI(characterData);
 
         UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
 
     void Update() {
@@ -183,6 +188,8 @@ public class PlayerStats : MonoBehaviour
     {
         experience += amount;
         LevelUpChecker();
+
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -203,9 +210,21 @@ public class PlayerStats : MonoBehaviour
             experienceCap += experienceCapIncrease;
 
             levelsToIncrease++;
+
+            UpdateLevelText();
         }
 
         StartCoroutine(LevelUpCoroutine(levelsToIncrease));
+    }
+
+    void UpdateExpBar()
+    {
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        levelText.text = "Lvl " + level.ToString();
     }
 
     private IEnumerator LevelUpCoroutine(int levelsToIncrease)
