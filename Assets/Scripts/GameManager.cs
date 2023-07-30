@@ -34,16 +34,20 @@ public class GameManager : MonoBehaviour
     public Image chosenCharacterImage;
     public TMP_Text chosenCharacterName;
     public TMP_Text levelReachedDisplay;
-
+    public TMP_Text timeSurvivedDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(InventoryManager.MAX_SLOTS);
     public List<Image> chosenPassiveItemsUI = new List<Image>(InventoryManager.MAX_SLOTS);
+
+    [Header("Stopwatch")]
+    public float timeLimit; // The time limit in seconds
+    float stopwatchTime; // The current time elapsed since the stopwatch started
+    public TMP_Text stopwatchDisplay;
 
     public bool isGameOver = false;
     
     private void Awake() {
         if(instance == null){
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else {
             Debug.LogWarning("EXTRA " + this + " DELETED");
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Gameplay:
                 CheckForPauseAndResume();
+                UpdateStopwatch();
                 break;
             case GameState.Paused:
                 CheckForPauseAndResume();
@@ -117,6 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        timeSurvivedDisplay.text = stopwatchDisplay.text;
         ChangeState(GameState.GameOver);
     }
 
@@ -164,6 +170,25 @@ public class GameManager : MonoBehaviour
             
         }
         
+    }
+
+    void UpdateStopwatch()
+    {
+        stopwatchTime += Time.deltaTime;
+
+        UpdateStopwatchDisplay();
+
+        if(stopwatchTime >= timeLimit) {
+            GameOver();
+        }
+    }
+
+    void UpdateStopwatchDisplay()
+    {
+        int minutes = Mathf.FloorToInt(stopwatchTime / 60);
+        int seconds = Mathf.FloorToInt(stopwatchTime % 60);
+
+        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
 }
