@@ -203,7 +203,6 @@ public class GameManager : MonoBehaviour
     {
         choosingUpgrades = true;
         ChangeState(GameState.LevelUp);
-
         Debug.Log("Start Level Up");
     }
 

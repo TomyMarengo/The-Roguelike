@@ -19,4 +19,6 @@ MonoBehaviour:
   pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
+  weaponName: Garlic Level 2
+  description: Reduces cooldown duration by half
   icon: {fileID: 1098183167, guid: 0f341aeb9c9eea14abf3b28b7b8e9d9e, type: 3}

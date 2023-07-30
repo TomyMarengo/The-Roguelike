@@ -130,9 +130,6 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
-    //TEST
-    public GameObject secondWeaponTest, firstPassiveItemTest, secondPassiveItemTest;
-
     void Awake()
     {
         characterData = CharacterSelector.GetData();
@@ -148,9 +145,6 @@ public class PlayerStats : MonoBehaviour
         CurrentMagnet = characterData.Magnet;
 
         SpawnWeapon(characterData.StartingWeapon);
-        SpawnWeapon(secondWeaponTest);
-        SpawnPassiveItem(firstPassiveItemTest);
-        SpawnPassiveItem(secondPassiveItemTest);
     }
 
     void Start()
@@ -212,7 +206,10 @@ public class PlayerStats : MonoBehaviour
     for (int i = 0; i < levelsToIncrease; i++)
     {
         Debug.Log("Level up");
+
         GameManager.instance.StartLevelUp();
+        inventory.RemoveUpgradeOptions();
+        inventory.ApplyUpgradeOptions();
 
         // Pausar la ejecución de la función hasta que se ejecute EndLevelUp
         yield return new WaitUntil(() => !GameManager.instance.choosingUpgrades);
