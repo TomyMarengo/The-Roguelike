@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0681ed0a3046589489d6946c6d89ddb5, type: 3}
   m_Name: KnifeCharacter
   m_EditorClassIdentifier: 
+  icon: {fileID: 1042857456, guid: cad06babc6a75d24e9daee921ad814f6, type: 3}
+  charName: Jenna
   startingWeapon: {fileID: 6216240601480203874, guid: 4b5af2812422a2740bca84d73aea0766, type: 3}
-  maxHealth: 1000
+  maxHealth: 10
   recovery: 1
   moveSpeed: 10
   might: 1

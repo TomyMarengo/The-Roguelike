@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    const int MAX_SLOTS = 6;
-    public List<WeaponController> weaponSlots = new List<WeaponController>(6);
+    public static int MAX_SLOTS = 6;
+    public List<WeaponController> weaponSlots = new List<WeaponController>(MAX_SLOTS);
     public int[] weaponLevels = new int[MAX_SLOTS];
-    public List<Image> weaponUISlots = new List<Image>(6);
-    public List<PassiveItem> passiveItemSlots = new List<PassiveItem>(6);
+    public List<Image> weaponUISlots = new List<Image>(MAX_SLOTS);
+    public List<PassiveItem> passiveItemSlots = new List<PassiveItem>(MAX_SLOTS);
     public int[] passiveItemLevels = new int[MAX_SLOTS];
-    public List<Image> passiveItemUISlots = new List<Image>(6);
+    public List<Image> passiveItemUISlots = new List<Image>(MAX_SLOTS);
 
     public int AddWeapon(WeaponController weapon)
     {
