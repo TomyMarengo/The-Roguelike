@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerStats : MonoBehaviour
         {
             if (currentHealth != value ) {
                 currentHealth = value;
+                UpdateHealthBar();
                 if (GameManager.instance != null)
                     GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth;
                 // Add any additional logic here
@@ -124,6 +126,9 @@ public class PlayerStats : MonoBehaviour
 
     InventoryManager inventory;
 
+    [Header("UI")]
+    public Image healthBar;
+
     //I-Frames
     [Header("I-Frames")]
     public float invincibilityDuration;
@@ -159,6 +164,8 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
 
         GameManager.instance.AssignChosenCharacterUI(characterData);
+
+        UpdateHealthBar();
     }
 
     void Update() {
@@ -232,6 +239,11 @@ public class PlayerStats : MonoBehaviour
         
     }
 
+    void UpdateHealthBar()
+    {
+        healthBar.fillAmount = currentHealth / characterData.MaxHealth;
+    }
+
     public void Kill()
     {
         if(!GameManager.instance.isGameOver) {
@@ -244,6 +256,7 @@ public class PlayerStats : MonoBehaviour
     public void RestoreHealth(float amount)
     {
         CurrentHealth = Mathf.Min(CurrentHealth+amount, characterData.MaxHealth);
+
     }
 
     void Recover()
@@ -259,12 +272,14 @@ public class PlayerStats : MonoBehaviour
         inventory.AddWeapon(spawnedWeapon.GetComponent<WeaponController>());
     }
 
-        public void SpawnPassiveItem(GameObject passiveItem)
+    public void SpawnPassiveItem(GameObject passiveItem)
     {
         //Spawn the starting weapon
         GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
         spawnedPassiveItem.transform.SetParent(transform);
         inventory.AddPassiveItem(spawnedPassiveItem.GetComponent<PassiveItem>());
     }
+
+
 
 }
