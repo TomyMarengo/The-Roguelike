@@ -17,7 +17,7 @@ MonoBehaviour:
   startingWeapon: {fileID: 6216240601480203874, guid: 4b5af2812422a2740bca84d73aea0766, type: 3}
   maxHealth: 10
   recovery: 1
-  moveSpeed: 10
+  moveSpeed: 5
   might: 1
   projectileSpeed: 0
-  magnet: 1.9
+  magnet: 3

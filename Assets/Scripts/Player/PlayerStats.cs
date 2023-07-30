@@ -98,7 +98,7 @@ public class PlayerStats : MonoBehaviour
             if (currentMagnet != value ) {
                 currentMagnet = value;
                 if (GameManager.instance != null)
-                    GameManager.instance.currentMagnetDisplay.text = "Current Magnet: " + currentMagnet;
+                    GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
                 // Add any additional logic here
             }
         }
@@ -157,12 +157,12 @@ public class PlayerStats : MonoBehaviour
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
 
-        GameManager.instance.currentHealthDisplay.text = "Health " + currentHealth;
-        GameManager.instance.currentRecoveryDisplay.text = "Recovery " + currentRecovery;
-        GameManager.instance.currentMoveSpeedDisplay.text = "Move Speed " + currentMoveSpeed;
-        GameManager.instance.currentMightDisplay.text = "Might " + currentMight;
-        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed " + currentProjectileSpeed;
-        GameManager.instance.currentMagnetDisplay.text = "Current Magnet " + currentMagnet;
+        GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth;
+        GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery;
+        GameManager.instance.currentMoveSpeedDisplay.text = "Move Speed: " + currentMoveSpeed;
+        GameManager.instance.currentMightDisplay.text = "Might: " + currentMight;
+        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed;
+        GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
 
         GameManager.instance.AssignChosenCharacterUI(characterData);
     }
@@ -186,6 +186,8 @@ public class PlayerStats : MonoBehaviour
 
     void LevelUpChecker()
     {
+        int levelsToIncrease = 0;
+
         while(experience >= experienceCap) {
             level++;
             experience -= experienceCap;
@@ -198,8 +200,26 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            levelsToIncrease++;
         }
+
+        StartCoroutine(LevelUpCoroutine(levelsToIncrease));
     }
+
+    private IEnumerator LevelUpCoroutine(int levelsToIncrease)
+{
+    for (int i = 0; i < levelsToIncrease; i++)
+    {
+        Debug.Log("Level up");
+        GameManager.instance.StartLevelUp();
+
+        // Pausar la ejecución de la función hasta que se ejecute EndLevelUp
+        yield return new WaitUntil(() => !GameManager.instance.choosingUpgrades);
+
+        // Aquí la función se reanudará después de que la pantalla de subir niveles haya sido cerrada
+    }
+}
 
     public void TakeDamage(float dmg)
     {

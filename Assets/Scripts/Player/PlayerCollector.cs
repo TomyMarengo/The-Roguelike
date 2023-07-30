@@ -17,14 +17,20 @@ public class PlayerCollector : MonoBehaviour
         playerCollector.radius = player.CurrentMagnet;
     }
 
+    private IEnumerator AttractToPlayer(Rigidbody2D pickupRigidbody)
+    {
+        while (pickupRigidbody != null)
+        {
+            Vector2 directionToPlayer = (transform.position - pickupRigidbody.transform.position).normalized;
+            pickupRigidbody.AddForce(directionToPlayer * pullSpeed);
+            yield return null;
+        }
+    }
+
+
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.TryGetComponent(out ICollectible collectible)) {
-
-            Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 forceDirection = (transform.position - other.transform.position).normalized;
-            rb.AddForce(forceDirection * pullSpeed);
-
-            collectible.Collect();
+        if (other.gameObject.CompareTag("Pickup")) {
+            StartCoroutine(AttractToPlayer(other.gameObject.GetComponent<Rigidbody2D>()));
         }
     }
 }

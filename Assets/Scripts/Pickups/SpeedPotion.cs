@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedPotion : Pickup, ICollectible
+public class SpeedPotion : Pickup
 {
     public int speedUp;
 
-    public void Collect()
+    protected override void Collect() 
     {
         /*PlayerStats player = FindObjectOfType<PlayerStats>();
         player.RestoreHealth(healthToRestore);*/

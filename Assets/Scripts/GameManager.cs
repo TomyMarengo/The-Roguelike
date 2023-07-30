@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     {
         Gameplay,
         Paused,
-        GameOver
+        GameOver,
+        LevelUp
     }
 
     public GameState currentState;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     [Header("Screens")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
+    public GameObject levelUpScreen;
 
     [Header("Current Stat Display")]
     public TMP_Text currentHealthDisplay;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text stopwatchDisplay;
 
     public bool isGameOver = false;
+    public bool choosingUpgrades = false;
     
     private void Awake() {
         if(instance == null){
@@ -73,6 +76,10 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 0f;
                     DisplayResults();
                 }
+                break;
+            case GameState.LevelUp:
+                Time.timeScale = 0f;
+                levelUpScreen.SetActive(true);
                 break;
             default:
                 Debug.Log("Invalid Current State");
@@ -118,6 +125,7 @@ public class GameManager : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
+        levelUpScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -189,6 +197,24 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(stopwatchTime % 60);
 
         stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StartLevelUp()
+    {
+        choosingUpgrades = true;
+        ChangeState(GameState.LevelUp);
+
+        Debug.Log("Start Level Up");
+    }
+
+    public void EndLevelUp()
+    {
+        choosingUpgrades = false;
+        Time.timeScale = 1f;
+        levelUpScreen.SetActive(false);
+        ChangeState(GameState.Gameplay);
+
+        Debug.Log("End Level Up");
     }
 
 }
