@@ -27,9 +27,9 @@ public class PlayerCollector : MonoBehaviour
         }
     }
 
-
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Pickup")) {
+            other.gameObject.GetComponent<BobbingAnimation>().enabled = false;
             StartCoroutine(AttractToPlayer(other.gameObject.GetComponent<Rigidbody2D>()));
         }
     }

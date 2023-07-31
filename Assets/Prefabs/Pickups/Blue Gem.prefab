@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1928304992058587400}
   - component: {fileID: 7556837815087871678}
   - component: {fileID: -7296886684286764725}
+  - component: {fileID: -7012346203823910232}
   m_Layer: 0
   m_Name: Blue Gem
   m_TagString: Pickup
@@ -137,3 +138,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceGranted: 30
+--- !u!114 &-7012346203823910232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256252296796502789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2406303cd075774da9197ffc8206f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 3
+  magnitude: 0.1
+  direction: {x: 0, y: 1, z: 0}
