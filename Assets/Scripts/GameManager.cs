@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
 
     public bool isGameOver = false;
     public bool choosingUpgrades = false;
+
+    public delegate void TimeUpHandler();
+    public static event TimeUpHandler OnTimeUp;
     
     private void Awake() {
         if(instance == null){
@@ -187,7 +190,9 @@ public class GameManager : MonoBehaviour
         UpdateStopwatchDisplay();
 
         if(stopwatchTime >= timeLimit) {
-            GameOver();
+            if(OnTimeUp != null) {
+                OnTimeUp();
+            }
         }
     }
 

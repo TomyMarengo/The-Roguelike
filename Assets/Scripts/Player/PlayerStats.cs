@@ -167,6 +167,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
 
         GameManager.instance.AssignChosenCharacterUI(characterData);
+        GameManager.OnTimeUp += ShowResults;
 
         UpdateHealthBar();
         UpdateExpBar();
@@ -228,21 +229,21 @@ public class PlayerStats : MonoBehaviour
     }
 
     private IEnumerator LevelUpCoroutine(int levelsToIncrease)
-{
-    for (int i = 0; i < levelsToIncrease; i++)
     {
-        Debug.Log("Level up");
+        for (int i = 0; i < levelsToIncrease; i++)
+        {
+            Debug.Log("Level up");
 
-        GameManager.instance.StartLevelUp();
-        inventory.RemoveUpgradeOptions();
-        inventory.ApplyUpgradeOptions();
+            GameManager.instance.StartLevelUp();
+            inventory.RemoveUpgradeOptions();
+            inventory.ApplyUpgradeOptions();
 
-        // Pausar la ejecución de la función hasta que se ejecute EndLevelUp
-        yield return new WaitUntil(() => !GameManager.instance.choosingUpgrades);
+            // Pausar la ejecución de la función hasta que se ejecute EndLevelUp
+            yield return new WaitUntil(() => !GameManager.instance.choosingUpgrades);
 
-        // Aquí la función se reanudará después de que la pantalla de subir niveles haya sido cerrada
+            // Aquí la función se reanudará después de que la pantalla de subir niveles haya sido cerrada
+        }
     }
-}
 
     public void TakeDamage(float dmg)
     {
@@ -266,10 +267,15 @@ public class PlayerStats : MonoBehaviour
     public void Kill()
     {
         if(!GameManager.instance.isGameOver) {
-            GameManager.instance.AssignLevelReachedUI(level);
-            GameManager.instance.AssignChosenWeaponsAndPassiveItemsUI(inventory.weaponUISlots, inventory.passiveItemUISlots);
-            GameManager.instance.GameOver();
+            ShowResults();
         }
+    }
+
+    void ShowResults()
+    {
+        GameManager.instance.AssignLevelReachedUI(level);
+        GameManager.instance.AssignChosenWeaponsAndPassiveItemsUI(inventory.weaponUISlots, inventory.passiveItemUISlots);
+        GameManager.instance.GameOver();
     }
 
     public void RestoreHealth(float amount)
@@ -299,6 +305,8 @@ public class PlayerStats : MonoBehaviour
         inventory.AddPassiveItem(spawnedPassiveItem.GetComponent<PassiveItem>());
     }
 
-
+    private void OnDestroy() {
+        GameManager.OnTimeUp -= ShowResults;
+    }
 
 }

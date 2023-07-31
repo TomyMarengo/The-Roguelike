@@ -273,10 +273,35 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 0.5
     spawnedCount: 0
+  - waveName: Wave 2
+    enemyGroups:
+    - enemyName: Bat
+      enemyQuota: 5
+      spawnedCount: 0
+      enemyPrefab: {fileID: 650750336500768081, guid: 476cf63220314274c8dc55542a35dfeb, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnedCount: 0
+  - waveName: Wave 3
+    enemyGroups:
+    - enemyName: Bat
+      enemyQuota: 5
+      spawnedCount: 0
+      enemyPrefab: {fileID: 650750336500768081, guid: 476cf63220314274c8dc55542a35dfeb, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnedCount: 0
+  - waveName: Wave 4
+    enemyGroups:
+    - enemyName: Bat
+      enemyQuota: 5
+      spawnedCount: 0
+      enemyPrefab: {fileID: 650750336500768081, guid: 476cf63220314274c8dc55542a35dfeb, type: 3}
+    waveQuota: 0
+    spawnInterval: 0.5
+    spawnedCount: 0
   currentWave: 0
   waveInterval: 4
-  maxEnemiesAllowed: 4
-  maxEnemiesReached: 0
   relativeSpawnPoints:
   - {fileID: 423121649}
   - {fileID: 849323659}

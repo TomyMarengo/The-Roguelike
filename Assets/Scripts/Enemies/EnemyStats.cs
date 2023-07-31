@@ -63,8 +63,9 @@ public class EnemyStats : MonoBehaviour
         EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
         PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
         
-        float newDistance = Vector2.Distance(player.position, enemySpawner.relativeSpawnPoints[Random.Range(0, enemySpawner.relativeSpawnPoints.Count)].position);
+        //float newDistance = Vector2.Distance(player.position, enemySpawner.relativeSpawnPoints[Random.Range(0, enemySpawner.relativeSpawnPoints.Count)].position);
+        //transform.position = player.position + (Vector3)(playerMovement.moveDir * newDistance);
         
-        transform.position = player.position + (Vector3)(playerMovement.moveDir * newDistance);
+        transform.position = player.position + (Vector3)(playerMovement.moveDir * despawnDistance);
     }
 }
